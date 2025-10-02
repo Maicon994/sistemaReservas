@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Listar Reservas</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+       <div id="header-container"></div>
+    <div id="caixa">
+        <div id="listagem-container">
+            <h2 class="titulos"> Listar Reservas</h2>
+            <div id="listar-reservas">
+                <p> Carregando, aguarde um pouco...</p>
+            </div>
+        </div>
+        <div id="formularioEdicao" style="display: none;">
+            <h2> Editar formulário</h2>
+            <label for="editarNome"> Nome: </label>
+            <input type="text" id="editarNome">
+            <br>
+            <br>
+            <label for="editarIdade"> Idade: </label>
+            <input type="number" id="editarIdade">
+            <br>
+            <br>
+            <label for="editarQuantiaPessoas"> Quantidade de Pessoas: </label>
+            <input type="number" id="editarQuantiaPessoas">
+            <br>
+            <br>
+            <label for="editarQuarto"> Quarto Desejado: </label>
+            <select id="editarQuarto">
+                <option value="quarto1">Quarto 1</option>
+                <option value="quarto2">Quarto 2</option>
+                <option value="quarto3">Quarto 3</option>
+            </select>
+            <input type="hidden" id="editarQuarto">
+            <br>
+            <br>
+            <label for="editarDataEntrada"> Data de Entrada: </label>
+            <input type="date" id="editarDataEntrada">
+            <br>
+            <br>
+            <label for="editarDataSaida"> Data de Saída: </label>
+            <input type="date" id="editarDataSaida">
+            <br>
+            <br>
+            <label for="editarTelefone"> Telefone: </label>
+            <input type="tel" id="editarTelefone">
+            <br>
+            <br>
+            <label for="editarEmail"> E-mail: </label>
+            <input type="email" id="editarEmail">
+            <br>
+            <br>
+            <label for="editarCpf"> CPF: </label>
+            <input type="text" id="editarCpf">
+            <br>
+            <br>
+            <label for="editarObservacoes"> Observações: </label> <br>
+            <textarea id="editarObservacoes" rows="4" cols="50"></textarea>
+            <br>
+            <br>
+            <input type="hidden" id="editarId">
+
+            <button id="btnSalvarEdicao"> Salvar Alterações</button>
+            <button id="btnCancelarEdicao"> Cancelar</button>
+
+
+        </div>
+    </div>
+    <script type="module" src="./../js/listarReservas.js"></script>
+    
+  <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+        const response = await fetch('../componentes/header.html');
+        const headerHTML = await response.text();
+        document.getElementById('header-container').innerHTML = headerHTML;
+    });
+    </script>
+</body>
+
+</html>
